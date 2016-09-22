@@ -9,17 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
+    @IBOutlet var searchText: UITextField!
+    @IBOutlet var searchButton: UIButton!
+    
+    @IBAction func searchTextDidChange(textField: UITextField)
+    {
+        searchText.text = textField.text
+    }
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+         super.viewDidLoad()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if(segue.identifier == "searchSegue")
+        {
+            let src = segue.destinationViewController as! resultViewController
+            
+            src.toPass = searchText.text
+        }
     }
-
-
 }
 
