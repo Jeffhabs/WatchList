@@ -11,6 +11,7 @@ import UIKit
 class resultViewController: UIViewController {
     
     @IBOutlet var resultLabel: UILabel!
+    @IBOutlet var backButton: UIButton!
     
     var toPass:String!
     
@@ -20,6 +21,9 @@ class resultViewController: UIViewController {
         resultLabel.text = toPass
     }
     
-    
+    @IBAction func backButtonPressed(sender: UIButton) {
+        
+        self.performSegueWithIdentifier("unwindToHome", sender: self)
+    }
 }
 

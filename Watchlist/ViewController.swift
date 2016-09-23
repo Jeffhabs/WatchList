@@ -18,9 +18,14 @@ class ViewController: UIViewController {
     {
         searchText.text = textField.text
     }
+    @IBAction func dismissKeyboard(sender: AnyObject)
+    {
+        searchText.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
          super.viewDidLoad()
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -31,6 +36,10 @@ class ViewController: UIViewController {
             
             src.toPass = searchText.text
         }
+    }
+    
+    @IBAction func unwindToHome(segue: UIStoryboardSegue) {
+        
     }
 }
 

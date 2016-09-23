@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gAc-Oy-Tit">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Watchlist" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,10 +25,6 @@
                                     <constraint firstAttribute="width" constant="240" id="sgd-dG-OXl"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfF-cs-f8k">
-                                <rect key="frame" x="190" y="180" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Search TV Show, or Movie" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDk-WZ-j3O">
                                 <rect key="frame" x="188" y="326" width="224" height="30"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -40,6 +37,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="dismissKeyboard:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="sf6-OP-gsj"/>
                                     <action selector="searchTextDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ZyG-tq-Sjt"/>
                                 </connections>
                             </textField>
@@ -51,11 +49,12 @@
                                 </constraints>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <segue destination="LfE-oh-iqe" kind="show" identifier="searchSegue" id="5Xj-xh-8aY"/>
+                                    <segue destination="LfE-oh-iqe" kind="show" identifier="searchSegue" id="Udc-WU-pnm"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="WRM-hh-Kbs" firstAttribute="top" secondItem="cDk-WZ-j3O" secondAttribute="bottom" constant="45" id="6fK-rq-3Hj"/>
                             <constraint firstItem="cDk-WZ-j3O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ENK-US-wMN"/>
@@ -64,15 +63,59 @@
                             <constraint firstItem="WRM-hh-Kbs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wsd-HV-COm"/>
                             <constraint firstItem="IyP-3z-CmV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="hpv-w7-j89"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="46f-Dq-fv3" appends="YES" id="RfM-bz-Bzi"/>
+                        </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home 2" id="aHR-jD-yjk"/>
                     <connections>
                         <outlet property="searchButton" destination="WRM-hh-Kbs" id="Cp7-pM-tTh"/>
                         <outlet property="searchText" destination="cDk-WZ-j3O" id="zUF-i1-QGK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="46f-Dq-fv3">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="teb-zS-7CN"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="347" y="584"/>
+            <point key="canvasLocation" x="1069" y="584"/>
+        </scene>
+        <!--Popular-->
+        <scene sceneID="GZw-uL-P6z">
+            <objects>
+                <viewController id="WFH-QW-jNc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jjp-Xe-dyK"/>
+                        <viewControllerLayoutGuide type="bottom" id="yXQ-hS-aN4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NwW-YT-HBO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBW-vh-YAI">
+                                <rect key="frame" x="271" y="28" width="59" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gSd-K9-Zxz"/>
+                                    <constraint firstAttribute="width" constant="59" id="qyg-Vl-r0f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wBW-vh-YAI" firstAttribute="centerX" secondItem="NwW-YT-HBO" secondAttribute="centerX" id="TQk-jP-FLb"/>
+                            <constraint firstItem="wBW-vh-YAI" firstAttribute="top" secondItem="jjp-Xe-dyK" secondAttribute="bottom" constant="8" id="lMI-Gp-aNk"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Popular" image="Star 2" id="yzZ-cP-iBh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pff-tR-0CJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649" y="1353"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="sxw-oF-KqN">
@@ -86,31 +129,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEJ-in-qv5">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="mqg-ve-tpn"/>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIt-CQ-BLt">
-                                <rect key="frame" x="279" y="73" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIt-CQ-BLt">
+                                <rect key="frame" x="279" y="28" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asb-xX-XXY">
+                                <rect key="frame" x="20" y="23" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Jq6-8D-1GD"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="LfE-oh-iqe" eventType="touchUpInside" id="X53-aV-ItN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HIt-CQ-BLt" firstAttribute="top" secondItem="yrq-9Z-IF4" secondAttribute="bottom" constant="8" id="6uK-7X-kxG"/>
+                            <constraint firstItem="Asb-xX-XXY" firstAttribute="leading" secondItem="agQ-jn-Bbd" secondAttribute="leadingMargin" id="PZO-Et-xnD"/>
+                            <constraint firstItem="HIt-CQ-BLt" firstAttribute="centerX" secondItem="agQ-jn-Bbd" secondAttribute="centerX" id="ceV-nn-tVD"/>
+                            <constraint firstItem="Asb-xX-XXY" firstAttribute="centerY" secondItem="HIt-CQ-BLt" secondAttribute="centerY" id="hv9-pK-qf3"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="Asb-xX-XXY" id="tXg-0K-nXb"/>
                         <outlet property="resultLabel" destination="HIt-CQ-BLt" id="KQU-aX-515"/>
+                        <segue destination="kru-nm-N8M" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="8Sv-IC-jnq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ME-ug-AAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kru-nm-N8M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1101" y="584"/>
+            <point key="canvasLocation" x="1856" y="584"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0SV-hJ-z7a">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gAc-Oy-Tit" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="awd-Ah-3AN">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="0.79925753546099287" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="1FY-2h-vhX"/>
+                        <segue destination="WFH-QW-jNc" kind="relationship" relationship="viewControllers" id="Ume-ae-Kge"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyd-mO-iKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257" y="584"/>
         </scene>
     </scenes>
     <resources>
         <image name="Slice 1" width="120" height="120"/>
+        <image name="Star 2" width="51" height="35"/>
+        <image name="home 2" width="49" height="33"/>
     </resources>
 </document>
