@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3818F6331D990108002A15BE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6311D990108002A15BE /* Alamofire.framework */; };
+		3818F6341D990108002A15BE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3818F6321D990108002A15BE /* SwiftyJSON.framework */; };
 		382BE1331D921E8500554873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BE1321D921E8500554873 /* AppDelegate.swift */; };
 		382BE1351D921E8500554873 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BE1341D921E8500554873 /* ViewController.swift */; };
 		382BE1381D921E8600554873 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382BE1361D921E8600554873 /* Main.storyboard */; };
@@ -14,9 +16,13 @@
 		382BE13D1D921E8600554873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382BE13B1D921E8600554873 /* LaunchScreen.storyboard */; };
 		389F118D1D9235E3002CBCA2 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F118C1D9235E3002CBCA2 /* Show.swift */; };
 		38F6530C1D9447BE00448C2E /* resultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F6530B1D9447BE00448C2E /* resultViewController.swift */; };
+		723DD9246051CD952B76240C /* Pods_Watchlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D624AD8ADBCB70E80EA0D7 /* Pods_Watchlist.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2319DCD9A8CC49AADF436278 /* Pods-Watchlist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watchlist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Watchlist/Pods-Watchlist.debug.xcconfig"; sourceTree = "<group>"; };
+		3818F6311D990108002A15BE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/Watchlist-fjaoyvtfuijrudepnncbhewtjbyv/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		3818F6321D990108002A15BE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/Watchlist-fjaoyvtfuijrudepnncbhewtjbyv/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		382BE12F1D921E8500554873 /* Watchlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watchlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		382BE1321D921E8500554873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		382BE1341D921E8500554873 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +32,8 @@
 		382BE13E1D921E8600554873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		389F118C1D9235E3002CBCA2 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		38F6530B1D9447BE00448C2E /* resultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resultViewController.swift; sourceTree = "<group>"; };
+		A43B68C62790958F45BD742F /* Pods-Watchlist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watchlist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watchlist/Pods-Watchlist.release.xcconfig"; sourceTree = "<group>"; };
+		E8D624AD8ADBCB70E80EA0D7 /* Pods_Watchlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watchlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3818F6331D990108002A15BE /* Alamofire.framework in Frameworks */,
+				3818F6341D990108002A15BE /* SwiftyJSON.framework in Frameworks */,
+				723DD9246051CD952B76240C /* Pods_Watchlist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +55,8 @@
 			children = (
 				382BE1311D921E8500554873 /* Watchlist */,
 				382BE1301D921E8500554873 /* Products */,
+				A61A729DF0976974439FD63C /* Pods */,
+				CC2DE18233510D3F9CB02F51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +83,25 @@
 			path = Watchlist;
 			sourceTree = "<group>";
 		};
+		A61A729DF0976974439FD63C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2319DCD9A8CC49AADF436278 /* Pods-Watchlist.debug.xcconfig */,
+				A43B68C62790958F45BD742F /* Pods-Watchlist.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC2DE18233510D3F9CB02F51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3818F6311D990108002A15BE /* Alamofire.framework */,
+				3818F6321D990108002A15BE /* SwiftyJSON.framework */,
+				E8D624AD8ADBCB70E80EA0D7 /* Pods_Watchlist.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 382BE1411D921E8600554873 /* Build configuration list for PBXNativeTarget "Watchlist" */;
 			buildPhases = (
+				D5595B823E8E5906BFB49867 /* [CP] Check Pods Manifest.lock */,
 				382BE12B1D921E8500554873 /* Sources */,
 				382BE12C1D921E8500554873 /* Frameworks */,
 				382BE12D1D921E8500554873 /* Resources */,
+				E43EC7250496CB3A563532DE /* [CP] Embed Pods Frameworks */,
+				4EA58E23A3978342A6ABA847 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,12 +132,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = CS3020;
 				TargetAttributes = {
 					382BE12E1D921E8500554873 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = JX9E4CJ52Q;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -136,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EA58E23A3978342A6ABA847 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watchlist/Pods-Watchlist-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5595B823E8E5906BFB49867 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E43EC7250496CB3A563532DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Watchlist/Pods-Watchlist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		382BE12B1D921E8500554873 /* Sources */ = {
@@ -185,8 +269,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -230,8 +316,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -250,29 +338,36 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		382BE1421D921E8600554873 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2319DCD9A8CC49AADF436278 /* Pods-Watchlist.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Watchlist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeffhabs.Watchlist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		382BE1431D921E8600554873 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A43B68C62790958F45BD742F /* Pods-Watchlist.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Watchlist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeffhabs.Watchlist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

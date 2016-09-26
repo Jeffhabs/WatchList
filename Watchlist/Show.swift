@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import SwiftyJSON
+import Alamofire
+
 
 class Show {
     var category: String

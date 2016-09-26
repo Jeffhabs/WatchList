@@ -8,17 +8,18 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
 
     @IBOutlet var searchText: UITextField!
     @IBOutlet var searchButton: UIButton!
     
-    @IBAction func searchTextDidChange(textField: UITextField)
+    @IBAction func searchTextDidChange(_ textField: UITextField)
     {
         searchText.text = textField.text
     }
-    @IBAction func dismissKeyboard(sender: AnyObject)
+    @IBAction func dismissKeyboard(_ sender: AnyObject)
     {
         searchText.resignFirstResponder()
     }
@@ -28,17 +29,17 @@ class ViewController: UIViewController {
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if(segue.identifier == "searchSegue")
         {
-            let src = segue.destinationViewController as! resultViewController
+            let src = segue.destination as! resultViewController
             
             src.toPass = searchText.text
         }
     }
     
-    @IBAction func unwindToHome(segue: UIStoryboardSegue) {
+    @IBAction func unwindToHome(_ segue: UIStoryboardSegue) {
         
     }
 }

@@ -21,9 +21,9 @@ class resultViewController: UIViewController {
         resultLabel.text = toPass
     }
     
-    @IBAction func backButtonPressed(sender: UIButton) {
+    @IBAction func backButtonPressed(_ sender: UIButton) {
         
-        self.performSegueWithIdentifier("unwindToHome", sender: self)
+        self.performSegue(withIdentifier: "unwindToHome", sender: self)
     }
 }
 
