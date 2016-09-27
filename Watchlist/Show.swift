@@ -7,17 +7,12 @@
 //
 
 import Foundation
-import SwiftyJSON
 import Alamofire
 
 
 class Show {
-    var category: String
-    var name: String
+  
+   // let gboxAPI = "tdnFhpEouvaW6BFfhFo1zi9KUooWRF"
     
-    init(category: String, name: String) {
-        self.category = category;
-        self.name = name;
-    }
-    
+
 }
