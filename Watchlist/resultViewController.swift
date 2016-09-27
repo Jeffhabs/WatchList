@@ -18,12 +18,10 @@ class resultViewController: UIViewController {
     @IBOutlet var releaseYear: UILabel!
     @IBOutlet var genreLabel: UILabel!
     
-    @IBAction func backButtonPressed(_sender: UIButton)
-    {
-        self.performSegue(withIdentifier: "unwindHome", sender: self)
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "unwindToHome", sender: self)
     }
     
-   
     
     var toPass:String!
     var toDirector:String!
@@ -34,6 +32,7 @@ class resultViewController: UIViewController {
         
         
         resultLabel.text = toPass
+        self.navigationItem.title = toPass
         let gboxAPI = "tdnFhpEouvaW6BFfhFo1zi9KUooWRF"
         //let search = "StarWars"
         let id = 133474
