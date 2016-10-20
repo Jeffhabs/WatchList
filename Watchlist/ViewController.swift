@@ -8,93 +8,64 @@
 
 import UIKit
 import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
 import SwiftyJSON
 
-typealias JSONDictionary = [String: AnyObject]
-typealias JSONArray = [JSONDictionary]
+//typealias JSONDictionary = [String: AnyObject]
+//typealias JSONArray = [JSONDictionary]
+
+/*
+   -- Json isn't requesting on search button
+   -- How can I pass this movieArray to my UITableView
+ 
+ */
 
 class ViewController: UIViewController {
+        
+    //var movieStoreProperty: MovieStore!
     
-
-    var idArray = [AnyObject]()
     @IBOutlet var searchText: UITextField!
     @IBOutlet var searchButton: UIButton!
     
     @IBAction func searchTextDidChange(_ textField: UITextField)
     {
-        searchText.text = textField.text
+        if searchText.text != nil || searchText.text != " " {
+            searchButton.isEnabled = true
+            searchText.text = textField.text
+        }
+        //searchText.text = textField.text
+        
     }
     @IBAction func dismissKeyboard(_ sender: AnyObject)
     {
         searchText.resignFirstResponder()
     }
     
-    override func viewDidLoad() {
-         super.viewDidLoad()
-        
-       // let jamBaseAPI = "59btb7tn9wfd4khqcwkpag66"
-        let gboxAPI = "tdnFhpEouvaW6BFfhFo1zi9KUooWRF"
-        let search = "StarWars"
-        let id = 133474
-        
-        Alamofire.request("http://api-public.guidebox.com/v1.43/US/\(gboxAPI)/search/movie/title/\(search)").responseJSON { response in
-            //debugPrint(response)
-            
-            let json = response.result.value as! JSONDictionary
-            if let results = json["results"] as? [AnyObject] {
-                for item in results {
-                    
-                    if let id = item["id"] {
-                       //populate an id array?
-                    }
-                }
-                
-            }
-            
-        }
-        Alamofire.request("http://api-public.guidebox.com/v1.43/US/\(gboxAPI)/movie/\(id)").responseJSON { response in
-            //debugPrint(response)
-            
-            let json = response.result.value as! JSONDictionary
-            if let data = json["release_year"] {
-                print (data)
-            }
-            if let genres = json["genres"] as? [AnyObject] {
-                for item in genres {
-                    if let title = item["title"] {
-                        print(title)
-                    }
-                }
-            }
-            if let directors = json["directors"] as? [AnyObject] {
-                for item in directors {
-                    if let name = item["name"] {
-                        print(name)
-                    }
-                }
-            }
-            if let purchase_web = json["purchase_web_sources"] as? [AnyObject] {
-                for item in purchase_web {
-                    if let source = item["display_name"] {
-                        print(source)
-                    }
-                }
-            }
+    @IBAction func sendRequest(_ sender: UIButton) {
+        if searchText.text == nil || searchText.text == " " {
+            print("Error: Please enter movie to search")
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if(segue.identifier == "searchSegue")
-        {
-            let src = segue.destination as! resultViewController
-            
-            src.toPass = searchText.text
+        if segue.identifier == "showMovieTitles" {
+            let rvc = segue.destination as! ResultViewController
+            rvc.searchTerm = searchText.text
         }
     }
     
-    @IBAction func unwindToHome(segue: UIStoryboardSegue) {
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchButton.isEnabled = false
+//        if searchText.text == nil || searchText.text == " " {
+//            searchButton.isEnabled = false
+//        }
     }
 }
+    
+    
+    
+
+
 
