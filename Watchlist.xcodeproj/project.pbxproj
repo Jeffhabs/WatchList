@@ -16,6 +16,7 @@
 		382BE13D1D921E8600554873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382BE13B1D921E8600554873 /* LaunchScreen.storyboard */; };
 		385C09A81DB6F7C100D03A5C /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388F38161DB6DB5C006CD44C /* AlamofireObjectMapper.framework */; };
 		385C09AB1DB6F87300D03A5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BE1341D921E8500554873 /* ViewController.swift */; };
+		3873E5B71DB99E69008BBF43 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3873E5B61DB99E69008BBF43 /* JSONModel.swift */; };
 		388F38191DB6DB61006CD44C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388F38181DB6DB61006CD44C /* ObjectMapper.framework */; };
 		38D633CC1DB6D39000AD0CE1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D633CB1DB6D39000AD0CE1 /* Movie.swift */; };
 		38F6530C1D9447BE00448C2E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F6530B1D9447BE00448C2E /* ResultViewController.swift */; };
@@ -34,6 +35,7 @@
 		382BE1391D921E8600554873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		382BE13C1D921E8600554873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		382BE13E1D921E8600554873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3873E5B61DB99E69008BBF43 /* JSONModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONModel.swift; path = ../../../Desktop/TwitterDemo/TwitterDemo/JSONModel.swift; sourceTree = "<group>"; };
 		388F38161DB6DB5C006CD44C /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/AlamofireObjectMapper/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
 		388F38181DB6DB61006CD44C /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "Pods/../build/Release-iphoneos/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
 		38D633CB1DB6D39000AD0CE1 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				382BE1341D921E8500554873 /* ViewController.swift */,
 				38F6530B1D9447BE00448C2E /* ResultViewController.swift */,
 				38D633CB1DB6D39000AD0CE1 /* Movie.swift */,
+				3873E5B61DB99E69008BBF43 /* JSONModel.swift */,
 				3813A52F1DB70AF300D8C869 /* APIClient.swift */,
 				382BE1321D921E8500554873 /* AppDelegate.swift */,
 				382BE1361D921E8600554873 /* Main.storyboard */,
@@ -242,6 +245,7 @@
 				38F6530C1D9447BE00448C2E /* ResultViewController.swift in Sources */,
 				3813A5301DB70AF300D8C869 /* APIClient.swift in Sources */,
 				385C09AB1DB6F87300D03A5C /* ViewController.swift in Sources */,
+				3873E5B71DB99E69008BBF43 /* JSONModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

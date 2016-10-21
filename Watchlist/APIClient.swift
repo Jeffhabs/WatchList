@@ -8,28 +8,38 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 import AlamofireObjectMapper
 
+//typealias JSONDictionary = [String: AnyObject]
+//typealias JSONArray = [JSONDictionary]
+
 class APIClient {
+    /*
+    typealias completionBlock = (_ error: NSError?) -> Void
     
-    func fetchAPI(search: String) -> MovieResults{
+    func getSomeData(searchItem: String, completion: completionBlock) {
         
-        var returnResults: MovieResults?
-        let gboxAPI = "tdnFhpEouvaW6BFfhFo1zi9KUooWRF"
-        let URL = "http://api-public.guidebox.com/v1.43/US/\(gboxAPI)/search/movie/title/Gladiator/fuzzy"
-        Alamofire.request(URL).responseObject { ( response: DataResponse<MovieResults>) in
+        let gboxAPI = "rK5M0dCTUd268hk121BpNpEAxMOmFuNh"
+
+        let URL = "http://api-public.guidebox.com/v1.43/US/\(gboxAPI)/search/movie/title/\(searchItem)/fuzzy"
+        
+        Alamofire.request(URL).responseJSON { response in
             
-            let result = response.result.value
+            let json = response.result.value as! JSONDictionary
+            let resultArray = json["results"] as! JSONArray
             
-            returnResults = result
+            var results = [MovieModel]()
             
-//            if let movies = result?.movie {
-//                for item in movies {
-//                    print(item.movieTitle)
-//                }
-//            }
+            for item in resultArray {
+                if let movieInfo = MovieModel(json: item) {
+                    results.append(movieInfo)
+                }
+            }
+            
+            let mappedArray: [MovieModel] = mapArray(array: resultArray)
+            print(mappedArray)
         }
-        return returnResults!
     }
-    
+    */
 }
