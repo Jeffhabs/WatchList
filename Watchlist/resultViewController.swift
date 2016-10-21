@@ -8,75 +8,72 @@
 
 import UIKit
 import Alamofire
+import AlamofireObjectMapper
+import ObjectMapper
 import SwiftyJSON
 
-class resultViewController: UIViewController {
+typealias JSONDictionary = [String: AnyObject]
+typealias JSONArray = [JSONDictionary]
+typealias completionBlock = (_ error: NSError?) -> Void
+
+class ResultViewController: UITableViewController {
     
-    @IBOutlet var resultLabel: UILabel!
-    @IBOutlet var directorLabel: UILabel!
-    @IBOutlet var backButton: UIButton!
-    @IBOutlet var releaseYear: UILabel!
-    @IBOutlet var genreLabel: UILabel!
-    
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "unwindToHome", sender: self)
-    }
-    
-    
-    var toPass:String!
-    var toDirector:String!
+    var searchTerm: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchAPI(search: searchTerm!)
         
-        
-        
-        resultLabel.text = toPass
-        self.navigationItem.title = toPass
-        let gboxAPI = "tdnFhpEouvaW6BFfhFo1zi9KUooWRF"
-        //let search = "StarWars"
-        let id = 133474
-        
-        Alamofire.request("http://api-public.guidebox.com/v1.43/US/\(gboxAPI)/movie/\(id)").responseJSON { response in
-            //debugPrint(response)
-            
-            let json = response.result.value as! JSONDictionary
-            if let data = json["release_year"] {
-                self.releaseYear.text = data as? String
-                
-            if let genres = json["genres"] as? [AnyObject] {
-                for item in genres {
-                    if let title = item["title"] {
-                        self.genreLabel.text = title as? String
-                    }
-                }
-            }
-            if let directors = json["directors"] as? [AnyObject]{
-                for item in directors {
-                    if let name = item["name"]{
-                        self.directorLabel.text = name as? String
-                    }
-                }
-            }
-            if let purchase_web = json["purchase_web_sources"] as? [AnyObject] {
-                for item in purchase_web {
-                    if let source = item["display_name"] {
-                        print(source)
-                    }
-                }
-            }
-        }
-        
-        
+//        let client = APIClient()
+//        client.getSomeData(searchItem: searchTerm!, completion: {(error) -> Void in
+//        })
     }
     
-    func parse(json: JSON)
-    {
-        for result in json["genres"].arrayValue {
-            let title = result["title"].stringValue
-            directorLabel.text = title
+    func fetchAPI(search: String) {
+        let gboxAPI = "rK5M0dCTUd268hk121BpNpEAxMOmFuNh"
+        
+        let URL = "http://api-public.guidebox.com/v1.43/US/\(gboxAPI)/search/movie/title/\(searchTerm!)/fuzzy"
+        
+        Alamofire.request(URL).responseObject { ( response: DataResponse<MovieResults>) in
             
+            let result = response.result.value
+            var movieArray = [MovieInfo]()
+
+            if let movies = result?.movieResults {
+                for item in movies {
+                    movieArray.append(item)
+                    //print(item.movieTitle)
+                }
+            }
         }
+        
+        /* This doesn't print anything
+            for some reason my array isn't truly being 
+            popluated in the above fetchAPI call
+        */
+        
+//        for item in movieArray {
+//            print(item.movieTitle)
+//        }
+//
+//    }
+//    override func tableView(_ tablView: UITableView,
+//                            numberOfRowsInSection section: Int) -> Int {
+//        return movieArray.count
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//    
+//        let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
+//    
+//        //let movieArray = movieTitles.getMovieArray()
+//        let movieItem = movieArray[indexPath.row]
+//    
+//        cell.textLabel?.text = movieItem.movieTitle
+//        cell.detailTextLabel?.text = movieItem.movieRating
+//    
+//        return cell
+//    
+//        }
     }
-  }
 }
