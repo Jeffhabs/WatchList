@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "resultViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:resultViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MovieDetailViewController.(fetchAPI(id : Int) -&gt; ()).(closure #1):MovieDetailViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "resultViewController.(fetchAPI(search : String) -&gt; ()).(closure #1):resultViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "resultViewController.fetchAPI(search : String) -&gt; ():resultViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

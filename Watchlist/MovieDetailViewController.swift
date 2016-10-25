@@ -32,9 +32,6 @@ class MovieDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchAPI(id: movieID)
-        
-        
-  
     }
     
     override func viewDidLoad() {
@@ -61,15 +58,16 @@ class MovieDetailViewController: UIViewController {
                 detailMovie.release_year = result.release_year
                 detailMovie.posterImage = result.posterImage
                 detailMovie.overview = result.overview
-                
                 /* The arrays */
 //                detailMovie.genreArray = result.genreArray
 //                detailMovie.writersArray = result.writersArray
 //                detailMovie.directorArray = result.directorArray
-                
                 self.detailArray.append(detailMovie)
                 
             }
+            
+            // The below print statements are working as intended
+            // So I append to my arrays
             
             if let directors = result?.directorArray {
                 for names in directors {
