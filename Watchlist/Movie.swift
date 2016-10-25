@@ -51,42 +51,20 @@ class MovieInfo: Mappable {
     }
 }
 
-//class MovieStore {
-//    var movieItemArray = [MovieInfo]()
-//
-//}
- 
+class MovieModel: NSObject {
+    
+    var movieTitle: String?
+    var movieID: Int?
+    var movieRating: String?
+    var movieReleaseDate: String?
+    var inTheaters: Bool?
+    
+}
 
-//class MovieModel: JSONModel {
+
+//class MovieInfoModel: NSObject {
 //    
-//    var movieTitle: String?
-//    var movieID: Int?
-//    var movieRating: String?
-//    var movieReleaseDate: String?
-//    var inTheaters: Bool?
-//    
-//    required init?(json: JSONDictionary) {
-//        let json = JSON(json)
-//        
-//        guard let id = json["id"].int, let title = json["title"].string,
-//            let rating = json["rating"].string, let rDate = json["release_date"].string,
-//            let theaters = json["in_theaters"].bool else {
-//                
-//             self.movieTitle = ""
-//             self.movieID = 0
-//             self.movieRating = ""
-//             self.movieReleaseDate = ""
-//             self.inTheaters = false
-//            return nil
-//        }
-//        
-//        self.movieTitle = title
-//        self.movieID = id
-//        self.movieReleaseDate = rDate
-//        self.movieRating = rating
-//        self.inTheaters = theaters
-//        
-//    }
+//    var movie
 //}
 
 

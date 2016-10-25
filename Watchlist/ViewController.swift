@@ -34,9 +34,8 @@ class ViewController: UIViewController {
             searchButton.isEnabled = true
             searchText.text = textField.text
         }
-        //searchText.text = textField.text
-        
     }
+    
     @IBAction func dismissKeyboard(_ sender: AnyObject)
     {
         searchText.resignFirstResponder()
@@ -50,17 +49,19 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMovieTitles" {
-            let rvc = segue.destination as! ResultViewController
+            let rvc = segue.destination as! resultViewController
             rvc.searchTerm = searchText.text
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //TODO: Fix search button to be disable when returning from resultViewController
+        
         searchButton.isEnabled = false
-//        if searchText.text == nil || searchText.text == " " {
-//            searchButton.isEnabled = false
-//        }
+        if searchText.text == nil || searchText.text == " " {
+            searchButton.isEnabled = false
+        }
     }
 }
     
