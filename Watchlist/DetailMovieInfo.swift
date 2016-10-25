@@ -13,9 +13,9 @@ import ObjectMapper
 
 class DetailMovieInfo: Mappable {
     
-    var genreArray: [GenreArray]?
-    var writersArray: [WritersArray]?
-    var directorArray: [DirectorsArray]?
+    var genreArray: [Genre]?
+    var writersArray: [Writers]?
+    var directorArray: [Directors]?
     var release_year: Int?
     var overview: String?
     var posterImage: String?
@@ -38,7 +38,7 @@ class DetailMovieInfo: Mappable {
 
 /* Make a class for each of  the arrays? */
 
-class GenreArray: Mappable {
+class Genre: Mappable {
     
     var genreTitle: String?
     
@@ -51,13 +51,7 @@ class GenreArray: Mappable {
     }
 }
 
-//class GenreModel: NSObject {
-//    
-//    var genreTitle: String?
-//    
-//}
-
-class WritersArray: Mappable {
+class Writers: Mappable {
     
     var writerName: String?
     
@@ -70,7 +64,7 @@ class WritersArray: Mappable {
     }
 }
 
-class DirectorsArray: Mappable {
+class Directors: Mappable {
     
     var directorName: String?
     

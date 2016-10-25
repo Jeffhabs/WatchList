@@ -21,9 +21,8 @@ import SwiftyJSON
  
  */
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
         
-    //var movieStoreProperty: MovieStore!
     
     @IBOutlet var searchText: UITextField!
     @IBOutlet var searchButton: UIButton!
@@ -41,6 +40,11 @@ class ViewController: UIViewController {
         searchText.resignFirstResponder()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchText.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func sendRequest(_ sender: UIButton) {
         if searchText.text == nil || searchText.text == " " {
             print("Error: Please enter movie to search")
@@ -56,12 +60,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: Fix search button to be disable when returning from resultViewController
-        
         searchButton.isEnabled = false
         if searchText.text == nil || searchText.text == " " {
             searchButton.isEnabled = false
         }
+    }
+    
+    
+    /* This will reset my text field to blank, and disable my button */
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        searchText.text = " "
+        searchButton.isEnabled = false
     }
 }
     
