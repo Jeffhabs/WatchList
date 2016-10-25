@@ -41,8 +41,6 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
          super.viewDidLoad()
         
-        
-        
         for _ in self.directorNames {
             
             var directors = [String]()
@@ -83,10 +81,12 @@ class MovieDetailViewController: UIViewController {
             overviewLabel.text = item.overview
             overviewLabel.numberOfLines = 0
             
-            self.urlString = item.posterImage!
+            if let t = item.posterImage {
+                self.urlString = item.posterImage!
+                fetchImage(urlString: self.urlString)
+            }
+            
         }
-        
-        fetchImage(urlString: urlString)
     }
 
        
