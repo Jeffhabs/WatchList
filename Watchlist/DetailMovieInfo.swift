@@ -32,7 +32,7 @@ class DetailMovieInfo: Mappable {
         self.directorArray <- map["directors"]
         self.release_year <- map["release_year"]
         self.overview <- map["overview"]
-        self.posterImage <- map["poster_120x171"]
+        self.posterImage <- map["poster_240x342"]
     }
 }
 

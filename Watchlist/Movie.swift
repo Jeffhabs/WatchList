@@ -62,9 +62,3 @@ class MovieModel: NSObject {
 }
 
 
-//class MovieInfoModel: NSObject {
-//    
-//    var movie
-//}
-
-

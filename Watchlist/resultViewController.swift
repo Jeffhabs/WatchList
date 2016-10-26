@@ -86,6 +86,7 @@ class resultViewController: UITableViewController {
         
         cell.titleLabel.text = movieItem.movieTitle
         cell.movieId = movieItem.movieID
+        cell.movieTitle = movieItem.movieTitle
         //print(cell.movieId)
         
         //movieItem.movieID
@@ -138,6 +139,7 @@ class resultViewController: UITableViewController {
             let cell = self.tableView.cellForRow(at: indexPath) as? MovieCell
             let mdvc = segue.destination as! MovieDetailViewController
             mdvc.movieID = cell?.movieId
+            mdvc.movieTitle = cell?.movieTitle
         }
     }
 }

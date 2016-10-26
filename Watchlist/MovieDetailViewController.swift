@@ -12,6 +12,7 @@ import AlamofireObjectMapper
 
 class MovieDetailViewController: UIViewController {
     
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var directorLabel: UILabel!
     @IBOutlet var writerLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
@@ -23,6 +24,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet var overviewLabel: UILabel!
     
     var movieID: Int!
+    var movieTitle: String!
     var urlString: String!
     
     var detailArray = [DetailMovieModel]()
@@ -40,6 +42,10 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
          super.viewDidLoad()
+        
+        self.scrollView.contentSize.height = 1000
+        
+        self.navigationItem.title = self.movieTitle
         
         for _ in self.directorNames {
             
@@ -127,7 +133,6 @@ class MovieDetailViewController: UIViewController {
                     self.genreTitles.append(titles)
                 }
             }
-            
             self.viewDidLoad()
         }
     }

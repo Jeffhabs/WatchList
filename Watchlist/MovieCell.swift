@@ -16,5 +16,6 @@ class MovieCell: UITableViewCell {
     @IBOutlet var theatersLabel: UILabel!
     
     var movieId: Int!
+    var movieTitle: String!
     
 }
